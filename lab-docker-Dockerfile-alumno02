@@ -1,0 +1,9 @@
+FROM python:3.11-slim
+
+RUN pip install jupyter numpy numba
+RUN mkdir /app
+
+WORKDIR /app
+COPY reduc-operation-array-par-alumno02.ipynb /app/
+
+CMD ["ipython", "/app/reduc-operation-array-par-alumno02.ipynb", "100000"]
